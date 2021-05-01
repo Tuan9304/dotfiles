@@ -1,29 +1,30 @@
-#include <iostream>
-#include <vector>
-
+#include <bits/stdc++.h>
 #define vt vector
+using namespace std;
+using ll = long long;
+using vi = vt<int>;
+using vvi = vt<vi>;
+using ii = pair<int, int>;
+using vii = vt<ii>;
 #define sqr(x) (x)*(x)
-#define debug(x) std::cout << #x << " -> " << x << '\n'
+#define all(x) begin(x), end(x)
+#define sz(x) (int)(x).size()
+#define debug(x) cout << #x << " -> " << x << '\n'
 #define F first
 #define S second
-
-typedef std::vt<int> vi;
-typedef std::vt<vi> vvi;
-typedef std::pair<int, int> ii;
-typedef std::vt<ii> vii;
-
+#define mp make_pair
+#define pb push_back
 const int inf = 1e9 + 7;
-const int64_t infll = 1e18 + 10;
+const ll infll = 1e18 + 10;
 
-void fast() {
-    std::ios_base::sync_with_stdio(0);
-    std::cin.tie(NULL); std::cout.tie(NULL);
-}
-void file() {
-    freopen("", "r", stdin);
-    freopen("", "w", stdout);
+void setIO(string name = "", string inp = "inp", string out = "out") {
+    cin.tie(0)->sync_with_stdio(0);
+    if(sz(name)) {
+        if(sz(inp)) freopen((name+"."+inp).c_str(), "r", stdin);
+        if(sz(out)) freopen((name+"."+out).c_str(), "w", stdout);
+    }
 }
 int main() {
-    fast();
+    setIO();
     return 0;
 }

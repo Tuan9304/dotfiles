@@ -25,3 +25,5 @@ vim.o.updatetime = 750
 vim.wo.wrap = false
 vim.o.writebackup = false
 vim.cmd('syn on')
+
+vim.api.nvim_set_keymap('n', '<leader>sv', ":luafile ~/.config/nvim/init.lua<CR>", { noremap=true })

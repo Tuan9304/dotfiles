@@ -22,17 +22,23 @@ zinit light-mode for \
     zdharma/fast-syntax-highlighting \
     romkatv/powerlevel10k
 
-zinit snippet https://github.com/sainnhe/dotfiles/raw/master/.zsh-theme
+zinit snippet https://github.com/sainnhe/dotfiles/raw/master/.zsh-theme-everforest-dark
 
-export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
-export CPPFLAGS="-I/usr/local/opt/llvm/include"
+export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib -L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/llvm/include -I/usr/local/opt/openssl@1.1/include"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 alias mf="sh ~/.scripts/gen_template.sh"
+
 eval "$(rbenv init -)"
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+export PATH="/usr/local/opt/openldap/bin:$PATH"
+export PATH="/usr/local/opt/openldap/sbin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
