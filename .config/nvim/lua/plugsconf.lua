@@ -1,11 +1,11 @@
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--[[ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = {
       prefix = '',
     },
     update_in_insert = true,
   }
-)
+) ]]
 
 -- local servers = {'pyls'}
 
@@ -16,10 +16,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 end ]]
 
 -- require'lspconfig'.clangd.setup {}
-
-
--- akinsho/flutter-tools.nvim
--- require'flutter-tools'.setup {}
 
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {
@@ -80,20 +76,38 @@ vim.g.termbufm_code_scripts = {
 	run = {'cat input | python %s', '%:p'},
     },
 }
+--everforest
+vim.g.everforest_background = 'medium'
+vim.g.everforest_enable_italic = 1
+vim.g.everforest_disable_italic_comment = 0
+vim.g.everforest_diagnostic_text_highlight = 1
+vim.g.everforest_diagnostic_virtual_text = 'colored'
+--vim.g.everforest_diagnostic_line_highlight = 1 !NW
+vim.g.everforest_better_performance = 1
+vim.cmd('colorscheme everforest')
+
 --hoob3rt/lualine.nvim
 require('lualine').setup{
-  extensions = {'nvim-tree'}
+  options = {
+    theme = 'everforest'
+  },
 }
 
 -- Disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- nvim-tree.lua
-require'nvim-tree'.setup {}
-vim.api.nvim_set_keymap('n', '<leader><Space>', ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-
 -- cfparser.vim
 vim.g.cf_pl_by_ext_custom = {
     [".cpp"] = 42,
 }
+
+-- lukas-reineke/indent-blankline.nvim
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+}
+
+
