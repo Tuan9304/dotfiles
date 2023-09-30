@@ -18,7 +18,7 @@
 //      ========`-.____`-.___\_____/___.-`____.-'========         //
 //                           `=---='                              //
 //      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        //
-//             佛祖保佑       永不宕机     永无BUG                   //
+//                                                                //
 ////////////////////////////////////////////////////////////////////
 
 #include <bits/stdc++.h>
@@ -51,14 +51,12 @@ int flog(const int &x) {return 31 - __builtin_clz(x);}
 ll flog(const ll &x) {return 63 - __builtin_clzll(x);}
 template<class T> void uniq(vt<T> &a) {sort(all(a));a.resize(unique(all(a)) - a.begin());}
 void setIO(string name = "", string inp = "inp", string out = "out") {
-    cin.tie(0)->sync_with_stdio(0);
-    if(sz(name)) {
         if(sz(inp)) freopen((name+"."+inp).c_str(), "r", stdin);
         if(sz(out)) freopen((name+"."+out).c_str(), "w", stdout);
-    }
 }
 int main() {
-    setIO();
+    cin.tie(0)->sync_with_stdio(0);
+    // setIO();
 
     return 0;
 }
